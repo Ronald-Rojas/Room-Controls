@@ -118,8 +118,8 @@ void loop(){
      F_index++;
    }
    else if ( command == 'e'){ 
-     //TODO:finish command of the finished and make the hardware update method
- 
+    RoomControl(atoi(L_Data), atoi(A_Data));
+    delay(10);
    }
    else if( command == 't'){
      Flash_Op(F_Data[0],F_Data[1],F_Data[2],F_Data[3],F_Data[4]);
@@ -129,7 +129,7 @@ void loop(){
    
    lastTimeCommand = millis();
   }
-  if(millis() >= lastTimeCommand + autoOFF){
+  if(millis() >= (lastTimeCommand + autoOFF)){
     //TODO create hardware command
   }
   
@@ -155,5 +155,27 @@ void Flash_Op(char FCMD, uint8_t z1, uint8_t z2, uint8_t z3, uint8_t z4){
   }
 }
 
+void RoomControl(int light,boolean acval){
+  boolean light1 = false,light2 = false,light3 = false,light4 = false;
+  
+  if( light %2 == 1 ) {
+    light1 = true;
+  }
+
+  if( light >= 8){
+    light4 = true;
+  }
+  if( light/8 >= 4){
+    light3 = true;
+  }
+  if( light/32 >= 2){
+    light2 = true;
+  }
+  digitalWrite(L1, light1);
+  digitalWrite(L2, light2);
+  digitalWrite(L3, light3);
+  digitalWrite(L4, light4);
+  digitalWrite(AC, acval);
+}
 
 
