@@ -4,6 +4,7 @@ import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Toast;
 
 import java.util.Set;
@@ -31,5 +32,14 @@ public class SettingsMenu extends AppCompatActivity{
                 startActivityForResult(turnToothOn, 1);
             }
         }
+    }
+
+    public void submitSettings(View view) {
+        //TODO create submit settings for the application. Make bluetooth code
+
+
+
+        Intent intent = new Intent(this, HomeActivity.class);
+        startActivity(intent);
     }
 }
