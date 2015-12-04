@@ -37,13 +37,11 @@ public class HomeActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void Controls(View view) {
-        Intent intent = new Intent(this, Control.class);
-        startActivity(intent);
+    public void SetAlarm(View view){
+        startActivity(new Intent(getApplicationContext(), SetAlarmActivity.class));
     }
 
-    public void Settings(View view) {
-        Intent intent = new Intent(this, SettingsMenu.class);
-        startActivity(intent);
+    public void RoomControl(View view) {
+        startActivity(new Intent(getApplicationContext(), RoomControlActivity.class));
     }
 }

@@ -17,8 +17,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Control"></activity>
-        <activity android:name=".SettingsMenu"></activity>
+        <activity
+            android:name=".RoomControlActivity"
+            android:label="Control Room">
+
+        </activity>
+        <activity
+            android:name=".SetAlarmActivity"
+            android:label="Set Alarm">
+
+        </activity>
     </application>
 
 </manifest>
